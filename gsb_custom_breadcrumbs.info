@@ -1,0 +1,4 @@
+name = GSB Custom Breadcrumbs
+description = Allows customized breadcrumbs.
+core = 7.x
+package = GSB

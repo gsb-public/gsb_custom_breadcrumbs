@@ -1,0 +1,13 @@
+<?php
+/**
+ * Override breadcrumb
+ */
+function gsb_custom_breadcrumbs_preprocess_breadcrumb(&$variables) {
+  $path = current_path();
+  $path_alias = drupal_lookup_path('alias', $path);
+  $path_chunks = explode('/', $path_alias);
+  if ($path_chunks[0] == 'exec-ed' || $path_chunks[0] == 'seed') {
+    array_shift($variables['breadcrumb']);
+    array_unshift($variables['breadcrumb'], '<a href="/">Home</a>', '<a href="/">Stanford GSB</a>');
+  }
+}
